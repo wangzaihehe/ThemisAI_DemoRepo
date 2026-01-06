@@ -191,11 +191,11 @@ The platform supports unlimited feature expansion:
 ThemisAI implements a **plugin-agnostic RAG (Retrieval-Augmented Generation) framework** that can be leveraged by any plugin, providing a consistent and powerful knowledge retrieval system.
 
 ```
-┌─────────────────────────────────────────────────┐
-│         Reusable RAG Framework                  │
-│  (Vector Search + Context Retrieval + LLM)      │
-└─────────────────────────────────────────────────┘
-         │                    │                    │
+    ┌─────────────────────────────────────────────────┐
+    │         Reusable RAG Framework                  │
+    │  (Vector Search + Context Retrieval + LLM)      │
+    └─────────────────────────────────────────────────┘
+         │                   │                   │
     ┌────▼────┐         ┌────▼────┐         ┌────▼────┐
     │  Chat   │         │ GradeAI │         │ Future  │
     │ Plugin  │         │ Plugin  │         │ Plugin  │
