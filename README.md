@@ -97,12 +97,7 @@ The plugin architecture enables true horizontal scaling:
 
 ### Vertical Extensibility
 
-The platform supports unlimited feature expansion:
-
-- **New Plugins**: Add new functionality by creating a new plugin directory
-- **Plugin Composition**: Plugins can depend on other plugins (with proper dependency management)
-- **Shared Services**: Common services (AI models, vector databases) are shared across plugins
-- **Cross-Plugin Communication**: Plugins can communicate through well-defined interfaces
+The platform supports unlimited feature expansion through new plugins, plugin composition, shared services, and cross-plugin communication.
 
 ### Database Scalability
 
@@ -136,9 +131,9 @@ The platform supports unlimited feature expansion:
 - **Authentication**: JWT-based
 
 ### AI Infrastructure
-- **LLM**: Ollama (GPT-OSS 20B/120B) - **Local Deployment**
-- **Embeddings**: Jina AI v4 - **Local Deployment**
-- **Vector Database**: ChromaDB
+- **LLM**: Ollama (GPT-OSS 20B/120B) - Local deployment for privacy and cost control
+- **Embeddings**: Jina AI v4 - Local deployment with multi-modal support
+- **Vector Database**: ChromaDB for semantic search
 - **OCR**: PaddleOCR (with migration path to DeepSeek OCR)
 - **RAG Framework**: Reusable, plugin-agnostic retrieval and generation system
 
@@ -246,15 +241,14 @@ ThemisAI implements a **plugin-agnostic RAG (Retrieval-Augmented Generation) fra
 
 **Chat Plugin:**
 - Upload documents for context-aware conversations
-- Search across conversation history
-- Retrieve relevant information for accurate responses
+- Legal document analysis and research
 - Multi-document knowledge base queries
+- Semantic search across conversation history
 
 **GradeAI Plugin:**
 - Store and retrieve grading rubrics
 - Search student submission history
 - Reference past grading patterns
-- Retrieve relevant examples for consistent grading
 
 **Future Plugins:**
 - **Documentation Plugin**: Search internal documentation
@@ -287,22 +281,14 @@ ThemisAI implements a **plugin-agnostic RAG (Retrieval-Augmented Generation) fra
 ### Technical Implementation
 
 **Unified Vector Utilities:**
-- Centralized embedding functions
-- Shared ChromaDB connection management
+- Centralized embedding functions with shared ChromaDB connection
 - Consistent document processing pipeline
 - Reusable search and retrieval functions
 
 **Plugin Integration:**
-- Simple API for document upload
-- Easy-to-use search functions
+- Simple API for document upload and search
 - Automatic collection management
-- Seamless context injection
-
-**Example Usage Pattern:**
-1. Plugin uploads document → RAG framework processes and indexes
-2. User query → Plugin calls RAG search function
-3. RAG retrieves relevant contexts → Returns to plugin
-4. Plugin injects context into LLM prompt → Generates enhanced response
+- Seamless context injection into LLM prompts
 
 ---
 
@@ -316,13 +302,21 @@ ThemisAI implements a **plugin-agnostic RAG (Retrieval-Augmented Generation) fra
 - **Multi-modal Support**: Text, PDF, and image processing
 - **Privacy-First**: All processing happens locally, ensuring data privacy
 
+**Legal Applications:**
+- **Document Analysis**: Upload legal documents (contracts, briefs, case files) for AI-powered analysis and summarization
+- **Legal Research**: Search across case law, statutes, and legal precedents using semantic search
+- **Contract Review**: Analyze contracts for key terms, risks, and compliance issues
+- **Case Preparation**: Organize and search through case files, depositions, and evidence
+- **Legal Q&A**: Ask questions about legal documents with context-aware responses
+- **Confidentiality**: All legal documents processed locally, ensuring attorney-client privilege and data security
+- **Compliance**: Meet legal industry requirements (HIPAA, GDPR, state bar regulations) with on-premises processing
+
 ### 2. GradeAI Plugin
 - **Automated Grading**: AI-powered homework and assignment grading using local models
 - **Dual Upload Modes**: 
   - Single PDF with page-based splitting
   - Multiple PDFs (one per student)
 - **Rubric-Based Scoring**: Configurable grading rubrics with AI evaluation via RAG framework
-- **RAG-Enhanced Grading**: Rubrics stored in vector database for intelligent retrieval and context-aware scoring
 - **Progress Tracking**: Real-time grading progress with detailed status
 - **Result Management**: Comprehensive grading results with statistics
 - **Local Processing**: All grading happens on-premises, protecting student privacy
@@ -442,10 +436,9 @@ The plugin architecture enables unlimited expansion:
 
 - **New AI Capabilities**: Add specialized AI plugins (translation, summarization, etc.) leveraging local models
 - **RAG-Powered Plugins**: Any new plugin can immediately use the reusable RAG framework for knowledge retrieval
-- **Integration Plugins**: Connect with external services (Canvas, LMS, etc.) while maintaining local AI processing
+- **Integration Plugins**: Connect with external services (Canvas, LMS, legal databases, etc.) while maintaining local AI processing
 - **Workflow Plugins**: Create custom workflows and automations with RAG-enhanced context
-- **Analytics Plugins**: Add analytics and reporting capabilities with local data processing
-- **Custom Business Logic**: Industry-specific plugins with domain-specific RAG knowledge bases
+- **Industry-Specific Plugins**: Legal, healthcare, finance, and other domain-specific plugins with specialized RAG knowledge bases
 - **Multi-Model Support**: Deploy specialized models for different plugins while sharing the RAG infrastructure
 
 ---
@@ -464,9 +457,10 @@ The plugin architecture enables unlimited expansion:
 **Experience ThemisAI**: [chat.ai-themis.com](https://chat.ai-themis.com)
 
 Try the platform's features:
-- Chat with AI using the Chat plugin
+- Chat with AI using the Chat plugin (perfect for legal document analysis)
 - Explore the GradeAI automated grading system
 - Experience the seamless plugin switching interface
+- Upload documents and experience RAG-powered context-aware responses
 
 ---
 
@@ -486,6 +480,14 @@ Try the platform's features:
 
 ## 🎯 Use Cases
 
+### Legal Industry
+- **Document Analysis**: Upload contracts, briefs, and case files for AI-powered analysis
+- **Legal Research**: Semantic search across case law, statutes, and legal precedents
+- **Contract Review**: Automated contract analysis for key terms and compliance
+- **Case Preparation**: Organize and search through case files, depositions, and evidence
+- **Client Confidentiality**: On-premises processing ensures attorney-client privilege protection
+- **Compliance**: Meet legal industry data security requirements (state bar regulations, HIPAA)
+
 ### Educational Institutions
 - Automated assignment grading (GradeAI)
 - Student support chat (Chat plugin)
@@ -495,6 +497,7 @@ Try the platform's features:
 - Internal knowledge base (Chat with RAG)
 - Custom workflow automation (plugin-based)
 - Multi-tenant SaaS applications
+- Document management and search
 
 ### Developers
 - Rapid feature prototyping
