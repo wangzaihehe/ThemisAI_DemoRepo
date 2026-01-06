@@ -32,16 +32,16 @@ ThemisAI implements a **dual-layer plugin architecture** that spans both fronten
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    ThemisAI Core Platform                     │
-│  (Authentication, Routing, Database, Plugin Infrastructure)   │
+│                    ThemisAI Core Platform                   │
+│  (Authentication, Routing, Database, Plugin Infrastructure) │
 └─────────────────────────────────────────────────────────────┘
                             │
         ┌───────────────────┼───────────────────┐
         │                   │                   │
-┌───────▼───────┐  ┌───────▼───────┐  ┌───────▼───────┐
-│  Chat Plugin   │  │ GradeAI Plugin │  │ Future Plugin │
-│  (Hot-Plugged) │  │ (Hot-Plugged) │  │ (Hot-Plugged) │
-└───────────────┘  └───────────────┘  └───────────────┘
+┌───────▼───────┐  ┌───────▼─────────┐  ┌───────▼─────────┐
+│  Chat Plugin  │  │ GradeAI Plugin  │  │ Future Plugin   │
+│  (Hot-Plugged)│  │ (Hot-Plugged)   │  │ (Hot-Plugged)   │
+└───────────────┘  └─────────────────┘  └─────────────────┘
 ```
 
 ### Backend Plugin Architecture
